@@ -12,8 +12,8 @@ from tqdm import tqdm
 # CONFIG
 # ==============================
 
-IMAGE_DIR = "/home/atanusaha/drumssheet/Dataset/sheetmusic"
-MASK_DIR  = "/home/atanusaha/drumssheet/Dataset/staffline_masks"
+IMAGE_DIR = "/home/drumssheet/Dataset/sheetmusic"
+MASK_DIR  = "/home/drumssheet/Dataset/staffline_masks"
 
 IMG_SIZE = 2048
 BATCH = 1
