@@ -120,4 +120,4 @@ for model_name in MODELS:
         name=run_name + "_val"
     )
 
-print("\n ALL MODEL TRAINING FINISHED")
+print("\n TRAINING FINISHED")
