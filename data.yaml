@@ -1,0 +1,55 @@
+nc: 49
+
+names:
+  # ===== DRUM CLASSES (0–7) =====
+  0: clef
+  1: beam
+  2: barline
+  3: oval_notehead
+  4: cross_notehead
+  5: diamond_notehead
+  6: accent
+  7: rest
+
+  # ===== PIANO CLASSES (8–48) =====
+  8: beam
+  9: noteheadBlackOnLine
+  10: noteheadBlackInSpace
+  11: noteheadHalfOnLine
+  12: noteheadHalfInSpace
+  13: noteheadWholeOnLine
+  14: noteheadWholeInSpace
+  15: noteheadDoubleWholeOnLine
+  16: noteheadDoubleWholeInSpace
+  17: restWhole
+  18: restHalf
+  19: restQuarter
+  20: rest8th
+  21: rest16th
+  22: rest32nd
+  23: rest64th
+  24: rest128th
+  25: clefG
+  26: clefF
+  27: clefCAlto
+  28: clefCTenor
+  29: clefUnpitchedPercussion
+  30: accidentalSharp
+  31: accidentalFlat
+  32: accidentalNatural
+  33: accidentalDoubleSharp
+  34: accidentalDoubleFlat
+  35: articAccentAbove
+  36: articAccentBelow
+  37: stem
+  38: ledgerLine
+  39: brace
+  40: slur
+  41: tie
+  42: augmentationDot
+  43: timeSigCommon
+  44: timeSigCutCommon
+  45: flag8thUp
+  46: flag8thDown
+  47: flag16thUp
+  48: flag16thDown
