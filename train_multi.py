@@ -3,14 +3,10 @@ from datetime import datetime
 import torch
 import os
 
-# ======================================================
-# DATASET YAML
-# ======================================================
+
 DATA = "/home/Unified_Yolo/data.yaml"
 
-# ======================================================
-# MODELS TO COMPARE
-# ======================================================
+
 MODELS = [
     "yolo11n.pt",
     "yolo11s.pt",
@@ -19,15 +15,13 @@ MODELS = [
     "yolo11x.pt"
 ]
 
-# ======================================================
+
 # OUTPUT ROOT
-# ======================================================
+
 PROJECT_ROOT = "/home/Unified_Yolo/model_comparison"
 os.makedirs(PROJECT_ROOT, exist_ok=True)
 
-# ======================================================
-# TRAIN SETTINGS
-# ======================================================
+
 TRAIN_ARGS = dict(
     data=DATA,
     imgsz=1280,
@@ -65,7 +59,7 @@ TRAIN_ARGS = dict(
     verbose=True
 )
 
-# ======================================================
+
 # GPU INFO
 # ======================================================
 print("====================================")
@@ -77,9 +71,7 @@ if torch.cuda.is_available():
           round(torch.cuda.get_device_properties(0).total_memory / 1e9, 2), "GB")
 print("====================================")
 
-# ======================================================
-# TRAIN LOOP
-# ======================================================
+
 for model_name in MODELS:
 
     print("\n=======================================")
@@ -92,7 +84,7 @@ for model_name in MODELS:
     timestamp = datetime.now().strftime("%Y%m%d_%H%M")
     run_name = f"{short_name}_Unified_{timestamp}"
 
-    # ---------------- TRAIN ----------------
+   
     model.train(
         **TRAIN_ARGS,
         project=PROJECT_ROOT,
@@ -100,7 +92,7 @@ for model_name in MODELS:
         exist_ok=False
     )
 
-    # ---------------- LOAD BEST ----------------
+    
     best_weights = os.path.join(
         PROJECT_ROOT,
         run_name,
@@ -115,7 +107,7 @@ for model_name in MODELS:
 
     best_model = YOLO(best_weights)
 
-    # ---------------- VALIDATE ----------------
+   
     best_model.val(
         data=DATA,
         imgsz=1152,
